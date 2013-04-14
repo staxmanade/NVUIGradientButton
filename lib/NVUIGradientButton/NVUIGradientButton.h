@@ -53,4 +53,6 @@ typedef NS_ENUM(NSUInteger, NVUIGradientButtonStyle)
 - (void)setRightAccessoryImage:(UIImage *)rightAccessoryImage forState:(UIControlState)state;
 - (void)setLeftAccessoryImage:(UIImage *)leftAccessoryImage forState:(UIControlState)state;
 - (void)setTextFont:(UIFont*)font;
+- (void)showActivityIndicator;
+- (void)hideActivityIndicator;
 @end

@@ -30,7 +30,25 @@
 @end
 
 
-@implementation NVUIGradientButton
+@implementation NVUIGradientButton {
+    UIActivityIndicatorView *indicatorView;
+}
+
+- (void)showActivityIndicator{
+    if(indicatorView == nil) {
+        indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+        indicatorView.hidesWhenStopped = YES;
+        [self addSubview:indicatorView];
+    }
+    indicatorView.hidden = NO;
+    [indicatorView startAnimating];
+}
+- (void)hideActivityIndicator{
+    if(indicatorView != nil) {
+        indicatorView.hidden = YES;
+    }
+}
+
 
 #pragma mark - Memory Management
 
@@ -710,6 +728,10 @@
 		leftAccessoryRect.origin.x = padding;
 		[leftImage drawInRect:leftAccessoryRect];
 	}
+    
+    if (indicatorView) {
+        indicatorView.center = CGPointMake(padding + 20, (CGRectGetHeight(self.bounds) - CGRectGetHeight(leftAccessoryRect)) / 2);
+    }
 	
 	// Draw right image
 	CGRect rightAccessoryRect = CGRectZero;
