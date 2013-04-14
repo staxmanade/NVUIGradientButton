@@ -52,5 +52,5 @@ typedef NS_ENUM(NSUInteger, NVUIGradientButtonStyle)
 - (void)setText:(NSString *)text forState:(UIControlState)state;
 - (void)setRightAccessoryImage:(UIImage *)rightAccessoryImage forState:(UIControlState)state;
 - (void)setLeftAccessoryImage:(UIImage *)leftAccessoryImage forState:(UIControlState)state;
-
+- (void)setTextFont:(UIFont*)font;
 @end

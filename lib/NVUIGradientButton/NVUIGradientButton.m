@@ -198,6 +198,9 @@
 	}
 }
 
+- (void)setTextFont:(UIFont*)font {
+    _titleLabel.font = font;
+}
 
 - (void)setTintColor:(UIColor *)tintColor
 {
