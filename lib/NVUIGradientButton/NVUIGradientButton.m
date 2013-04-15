@@ -45,6 +45,7 @@
 }
 - (void)hideActivityIndicator{
     if(indicatorView != nil) {
+        [indicatorView stopAnimating];
         indicatorView.hidden = YES;
     }
 }
